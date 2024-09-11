@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+</head>
+<body>
+<button type="button" onclick="fibonacci()">Click Me to Calculate</button>
+<input
+        type="number"
+        id="maxLevel"
+        min="1"
+        placeholder="Enter a number"
+        required
+/>
+<div id="content">
+    <p id="output"></p>
+</div>
+</body>
+
+<script>
+    function fibonacci() {
+        let max = document.getElementById("maxLevel").value; // Get value from input
+        let A = 1;
+        let B = 1;
+        let output = "";
+
+        if (max < 1) {
+            document.getElementById("output").innerHTML =
+                "Please enter a number greater than 0.";
+            return;
+        }
+
+        output += A + " "; // Print the first Fibonacci number (A)
+
+        while (B <= max) {
+            // Correct condition to keep calculating until max is reached
+            output += B + " "; // Append the Fibonacci number to output
+            let C = A + B;
+            A = B;
+            B = C;
+        }
+
+        document.getElementById("output").innerHTML = output; // Display the result
+    }
+</script>
+</html>

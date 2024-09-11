@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Number Divider</title>
+</head>
+<body>
+<label for="Maxnumber">Enter a maximum number:</label>
+<input type="text" id="Maxnumber" name="max"/>
+<button id="calculate">Calculate</button>
+<p id="result"></p>
+
+<script>
+  document.getElementById('calculate').addEventListener('click', function() {
+    let A = 1;
+    let B = 1;
+    let max = parseInt(document.getElementById('Maxnumber').value, 10);
+
+    while (A <= max) {
+      let C = A + B;
+      A = B;
+      B = C;
+    }
+
+    document.getElementById('result').innerText = `${A} is finally bigger than the max number`;
+    console.log(`${A} is finally bigger than the max number`);
+  });
+</script>
+</body>
+</html>

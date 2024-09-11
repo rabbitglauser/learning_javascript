@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Leap Year Calculator</title>
+</head>
+<style>
+.label{
+  align-items: center;
+  display: -ms-grid;
+}
+
+.body{
+  background-color: lightblue;
+}
+
+.button{
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: #4CAF50;
+  color: white;
+  text-align: center;
+  font-size: 16px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+</style>
+
+<body class="body">
+  <label class="label" for="year">Enter a year:</label>
+  <input class="label" type="text" id="year" name="year"/>
+  <button class="button" id="check">Check Leap Year</button>
+  <p id="result"></p>
+
+<script>
+  document.getElementById('check').addEventListener('click', function() {
+    let year = parseInt(document.getElementById('year').value, 10);
+
+    if ((year % 400 === 0) || (year % 100 !== 0 && year % 4 === 0)) {
+      document.getElementById('result').innerText = `${year} is a leap year`;
+      console.log(`${year} is a leap year`);
+    } else {
+      document.getElementById('result').innerText = `${year} is not a leap year`;
+      console.log(`${year} is not a leap year`);
+    }
+  });
+</script>
+</body>
+</html>
