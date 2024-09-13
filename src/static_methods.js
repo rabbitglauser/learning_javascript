@@ -33,7 +33,10 @@ class Admin extends User{
     }
 
     Stats(){
-        @course
+
+
+
+        @User
         console.log("Stats");
         console.log(course)
     }
